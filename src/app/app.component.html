@@ -3,12 +3,16 @@
           data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a class="navbar-brand" [routerLink]="['/home']">Home</a>
+  <a class="navbar-brand" [routerLink]="['/home']">H4lx</a>
 
   <div class="collapse navbar-collapse " id="navbarContent" [ngbCollapse]="!isExpanded">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page1']">Page 1</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page2']">Page 2</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page1']">Checklist Matin</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page2']">Checklist Soir</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page3']">Bonnes pratiques de dev</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Bonnes pratiques</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Minnima-list</a></li>
+      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Sport App</a></li>
     </ul>
     <ul class="navbar-nav navbar-right blue">
       <li><a (click)='signOut()' style='cursor: pointer;'><span class="fa fa-user"></span> Sign Out</a></li>
@@ -16,6 +20,6 @@
   </div>
 </nav>
 
-<app-homepage></app-homepage>
+<item-list></item-list>
 
 <router-outlet></router-outlet>
