@@ -2,35 +2,19 @@ import {Injectable} from "@angular/core";
 import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, tap} from "rxjs/operators";
+import {Item} from "./item";
 
 @Injectable()
 export class ItemService{
 
-  private baseUrl = 'api/datas';
+  private baseUrl = 'api/items';
 
   constructor(private http : HttpClient){
   }
 
-  getCheckLists(): Observable<any[]>{
-
-    return this.http.get<any[]>(`${this.baseUrl}/checklists.json`).pipe(
-      tap(data => console.log("All : "+JSON.stringify(data))),
-      catchError(this.handleError)
-    );
-  }
-
-  getBestPractices(): Observable<any[]>{
-
-    return this.http.get<any[]>(`${this.baseUrl}/bestPractices.json`).pipe(
-      tap(data => console.log("All : "+JSON.stringify(data))),
-      catchError(this.handleError)
-    );
-  }
-
-  getApplications(): Observable<any[]>{
-
-    return this.http.get<any[]>(`${this.baseUrl}/applications.json`).pipe(
-      tap(data => console.log("All : "+JSON.stringify(data))),
+  getItems(): Observable<Item[]>{
+    return this.http.get<Item[]>(`${this.baseUrl}/homeItems.json`).pipe(
+      tap(data => console.log("All items: "+JSON.stringify(data))),
       catchError(this.handleError)
     );
   }
@@ -38,9 +22,9 @@ export class ItemService{
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if(err.error instanceof ErrorEvent){
-      errorMessage =`an error occured: ${err.error.message}`;
+      errorMessage =`an error occurred: ${err.error.message}`;
     }else{
-      errorMessage = `erver returned code: ${err.status}, error message is: ${err.message}`;
+      errorMessage = `server returned code: ${err.status}, error message is: ${err.message}`;
     }
     console.log(errorMessage);
     return throwError(errorMessage);

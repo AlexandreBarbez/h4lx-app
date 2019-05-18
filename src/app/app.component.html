@@ -1,23 +1,10 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark static-top">
   <button type="button" class="navbar-toggler navbar-toggler-right" (click)="isExpanded = !isExpanded" [attr.aria-expanded]="!isExpanded" aria-controls="navbarContent"
-          data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          data-toggle="collapse" data-target="#navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <a class="navbar-brand" [routerLink]="['/home']">H4lx</a>
 
-  <div class="collapse navbar-collapse " id="navbarContent" [ngbCollapse]="!isExpanded">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page1']">Checklist Matin</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page2']">Checklist Soir</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page3']">Bonnes pratiques de dev</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Bonnes pratiques</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Minnima-list</a></li>
-      <li class="nav-item"><a class='nav-link' [routerLink]="['/page4']">Sport App</a></li>
-    </ul>
-    <ul class="navbar-nav navbar-right blue">
-      <li><a (click)='signOut()' style='cursor: pointer;'><span class="fa fa-user"></span> Sign Out</a></li>
-    </ul>
-  </div>
 </nav>
 
 <item-list></item-list>

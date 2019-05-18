@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ItemService} from "./item.service";
+import {Item} from "./item";
 
 @Component({
   selector: 'item-list',
@@ -7,15 +8,16 @@ import {ItemService} from "./item.service";
   styleUrls: ['./item-list.component.css']
 })
 export class ItemListComponent implements OnInit {
-  checklists: any[] = [];
-  goodPractices: any = [];
-  apps: any = [];
+  todos: Item[] = [];
 
   constructor(private itemService : ItemService) {
   }
 
   ngOnInit() {
-
+    this.itemService.getItems().subscribe(
+      items =>{
+        this.todos = items;
+      }
+    );
   }
-
 }
