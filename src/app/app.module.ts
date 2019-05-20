@@ -8,6 +8,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {FormsModule} from "@angular/forms";
 import {ItemService} from "./items/item.service";
 import {HttpClientModule} from "@angular/common/http";
+import {TodolistModule} from "./todolist/todolist.module";
 
 @NgModule({
   providers: [ItemService],
@@ -18,9 +19,10 @@ import {HttpClientModule} from "@angular/common/http";
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    TodolistModule,
+    AppRoutingModule
   ],
   bootstrap: [AppComponent]
 })
