@@ -7,13 +7,13 @@ import {Item} from "./item";
 @Injectable()
 export class ItemService{
 
-  private baseUrl = 'api/items';
+  private baseUrl = 'api/items/homeItems.json';
 
   constructor(private http : HttpClient){
   }
 
   getItems(): Observable<Item[]>{
-    return this.http.get<Item[]>(`${this.baseUrl}/homeItems.json`).pipe(
+    return this.http.get<Item[]>(this.baseUrl).pipe(
       tap(data => console.log("All items: "+JSON.stringify(data))),
       catchError(this.handleError)
     );

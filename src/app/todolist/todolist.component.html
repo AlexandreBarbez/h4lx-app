@@ -1,3 +1,18 @@
-<p>
-  todolist {{id}} works!
-</p>
+<div class="container" *ngIf="todolist">
+
+  <div class="row">
+    <div class="col-lg-12">
+
+      <h1>{{todolist.title}}</h1>
+
+      <div class="form-check" *ngFor="let item of todolist.items">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          {{item}}
+        </label>
+      </div>
+
+    </div>
+  </div>
+
+</div>

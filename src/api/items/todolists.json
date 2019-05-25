@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Checklist du matin",
+    "items": ["faire ci", "faire ca"]
+  },
+  {
+    "id": 2,
+    "title": "Checklist du soir",
+    "items": ["faire ca", "faire ci"]
+  },
+  {
+    "id": 3,
+    "title": "Checklist de dev",
+    "items": ["faire ca", "faire ci"]
+  },
+  {
+    "id": 4,
+    "title": "Checklist du quotidien",
+    "items": ["faire ca", "faire ci"]
+  }
+]
