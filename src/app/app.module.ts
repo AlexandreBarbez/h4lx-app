@@ -5,16 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ItemListComponent } from './items/item-list.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import {FormsModule} from "@angular/forms";
-import {ItemService} from "./items/item.service";
-import {HttpClientModule} from "@angular/common/http";
-import {TodolistModule} from "./todolist/todolist.module";
+import { FormsModule } from "@angular/forms";
+import { ItemService } from "./items/item.service";
+import { HttpClientModule } from "@angular/common/http";
+import { TodolistModule } from "./todolist/todolist.module";
+import { SportComponent } from './sport/sport.component';
 
 @NgModule({
   providers: [ItemService],
   declarations: [
     AppComponent,
-    ItemListComponent
+    ItemListComponent,
+    SportComponent
   ],
   imports: [
     BrowserModule,

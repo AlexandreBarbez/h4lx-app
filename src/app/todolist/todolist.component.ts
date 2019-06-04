@@ -11,6 +11,7 @@ export class TodolistComponent implements OnInit {
   id:number;
   todolist: Todolist;
   private errorMessage: string;
+  doneList: Array<string>;
 
   constructor(private route: ActivatedRoute,
               private todolistService: TodolistService,
@@ -28,7 +29,19 @@ export class TodolistComponent implements OnInit {
         }
       },
       error => this.errorMessage = error
-    )
+    );
+    this.doneList = [];
   }
 
+  achieveItem(item: string) {
+    if(!(-1 < this.doneList.indexOf(item))){
+      this.doneList.push(item);
+    }else{
+      this.doneList.splice(this.doneList.indexOf(item),1);
+    }
+  }
+
+  isClicked(item: string) {
+    return -1 < this.doneList.indexOf(item);
+  }
 }
