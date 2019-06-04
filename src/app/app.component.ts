@@ -8,8 +8,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'h4lx-app';
   isExpanded: boolean;
-
-  signOut() {
-    console.log("signout clicked");
-  }
 }
